@@ -1,0 +1,361 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    padding: 1rem;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    background: #100f13;
+    font-family: 'Poppins', sans-serif;
+    background: url('images/wallpaper.jpg') left;
+    flex-direction: row;
+    
+}
+
+button.san {
+    cursor: pointer;
+    padding: 22px 46px;
+    font-size: 28px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: rgba(255, 255, 255, .1);
+    border: 3px solid rgba(255, 255, 255, .2);
+    border-radius: 18px;
+    transition: .4s;
+    position: absolute;
+    top: 8px;
+    left: 750px;
+
+}
+
+#sanmateo {
+    position: absolute;
+    top: 250px;
+    left: 550px;
+}
+
+
+button.san:hover {
+    z-index: 1;
+    border-color: transparent;
+    background: linear-gradient(
+        90deg,
+        #f9d923,
+        #00a19d,
+        #0c87b7,
+        #cb49ff,
+        #ff6666,
+        #f9d923
+    );
+    background-size: 400%;
+    box-shadow: 0 0 15px rgb(2, 4, 24);
+    animation: glow 12s linear forwards;
+}
+
+
+@keyframes glow {
+
+    from {
+        background-position: 0%;
+    }
+
+    to {
+        background-position: 400%;
+    }
+
+}
+
+button.san::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    background: inherit;
+    filter: blur(36px);
+    opacity: 0;
+    transition: .4s ease-out;
+}
+
+button.san:hover::before {
+    opacity: 1; 
+    z-index: -1;
+}
+
+/* Student Details */
+nav {
+    width: 90px;
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+    background: rgba(255, 255, 255, .06);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, .4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255, 255, 255, .15);
+    transition: .4s;
+    overflow-y: scroll;
+}
+
+nav::-webkit-scrollbar {
+    width: 20px;
+}
+nav::-webkit-scrollbar-track {
+    opacity: 1;
+}
+nav::-webkit-scrollbar-thumb {
+    
+    opacity: 1;
+}
+
+nav:hover {
+    width: 300px;
+}
+
+nav .nav-list-top,
+nav .nav-list-bottom {
+    width: 100%;
+}
+
+nav .nav-list-top {
+    top: 32%;
+}
+
+nav .nav-list-bottom {
+    bottom: 0;
+}
+
+nav .nav-brand img {
+    width: 50px;
+    border-radius: 50%;
+    margin-top: 15px;
+    transition: .4s;
+}
+
+nav:hover .nav-brand img {
+    width: 120px;
+    margin-top: 30px;
+}
+
+nav .nav-brand .info {
+    text-align: center;
+    pointer-events: none;
+    opacity: 0;
+}
+
+nav:hover .nav-brand .info {
+    opacity: 1;
+    transition: .4s;
+    transition-delay: .2s;
+}
+
+nav .nav-brand h2 {
+    color: #ffffff;
+    font-size: 30px;
+}
+
+nav .nav-brand p {
+    color: #f1f1f1;
+    font-size: 14px;
+}
+
+nav .nav-item {
+    cursor: pointer;
+    padding: 0 25px;
+    height: 80px;
+    line-height: 80px;
+    text-align: left;
+    transition: .4s;
+}
+
+nav .nav-item:hover {
+    background: rgba(255, 255, 255, .1);
+}
+
+nav .nav-item i {
+    margin: 0 6px;
+    font-size: 26px;
+    color: #dddddd;
+    transform: translateY(5px);
+    transition: .4s;
+}
+
+nav:hover .nav-item i {
+    color: #f4c402;
+}
+
+nav .nav-item span {
+    color: #ffffff;
+    font-size: 18px;
+    pointer-events: none;
+    opacity: 0;
+}
+
+nav:hover .nav-item span {
+    opacity: 1;
+    transition: .4s;
+    transition-delay: .2s;
+}
+
+/* Map Details */
+.mapDetails {text-align: center;
+    padding: 20px;
+    color: #fff;
+    font-weight: 100;
+    font-size: 12px;
+    position: absolute;
+    top: 200px;
+    left: 325px;
+}
+/* Pop up */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&display=swap');
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+.popup {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    color: rgba(100, 100, 100, 0.9);
+    font-weight: 100;
+    font-size: 24px;
+    position: absolute;
+    top: 150px;
+    right: 50px;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+h3{
+      color:#444;
+   padding:.5rem 0;
+   font-size: 2.5rem;
+}
+
+ .popup:target {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* close Button */
+  .close {
+    position: absolute;
+    right: 5px;
+    top: 12px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.2;
+  }
+  .close:hover {
+    opacity: 1;
+  }
+  .close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+  }
+  .close:before {
+    transform: rotate(45deg);
+  }
+  .close:after {
+    transform: rotate(-45deg);
+  }
+
+/* Table */
+table { 
+	width: 750px; 
+	border-collapse: collapse; 
+	margin:50px auto;
+	}
+
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+	background: #eee; 
+	}
+
+th { 
+	background: #3498db; 
+	color: white; 
+	font-weight: bold; 
+	}
+
+td, th { 
+	padding: 10px; 
+	border: 1px solid #ccc; 
+	text-align: center; 
+	font-size: 18px;
+	}
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	table { 
+	  	width: 100%; 
+	}
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { border: 1px solid #ccc; }
+	
+	td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+		/* Label the data */
+		content: attr(data-column);
+
+		color: #000;
+		font-weight: bold;
+	}
+
+}
+
+/* form */
+
+
